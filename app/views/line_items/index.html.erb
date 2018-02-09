@@ -2,6 +2,13 @@
 <p>Find me in app/views/line_items/index.html.erb</p>
 <ul>
   <% @line_items.each do |li| %>
-    <li><%= li %></li>
+    <li>
+      <%= li.name %>
+      <%= li.booked_amount %>
+      <%= li.actual_amount %>
+      <%= li.adjustments %>
+      <%= li.campaign_id %>
+    </li>
   <% end %>
 </ul>
+<%= paginate @line_items %>
