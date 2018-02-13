@@ -4,6 +4,7 @@ Features:
 - paginated list of line items
 - editable adjustments field
 - changelog of line item
+- can update from either line_items#index or line_items#show
 
 To get app running:
 ```
