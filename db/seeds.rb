@@ -16,6 +16,7 @@ line_items.each do |line_item|
     campaign = Campaign.find_or_create_by(name: line_item['campaign_name']) do |c|
       c.name = line_item['campaign_name']
     end
+    campaigns[campaign.name] = campaign
   end
 
   LineItem.create! do |li|
