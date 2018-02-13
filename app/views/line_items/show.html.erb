@@ -17,16 +17,16 @@
           <%= f.submit "Update" %>
         <% end %>
     </td>
-    <td><%= li.campaign_id %></td>
+    <td><%= @line_item.campaign_id %></td>
   </tr>
 </table>
 
 <h2>Changelog</h2>
-<% if @line_item.versions.empty? %>
+<% if @line_item.versions.size == 1 %>
   No previous changes
 <% else %>
   <ul>
-    <% @line_item.versions.reverse.each do |version| %>
+    <% @line_item.versions.drop(1).reverse.each do |version| %>
       <li><%= prettify_changeset(version.changeset) %></li>
     <% end %>
   </ul>
