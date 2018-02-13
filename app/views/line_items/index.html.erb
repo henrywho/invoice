@@ -1,13 +1,25 @@
 <h1>LineItems#index</h1>
-<ul>
+<table>
+  <tr>
+    <td>name</td>
+    <td>booked amount</td>
+    <td>actual amount</td>
+    <td>adjustments</td>
+    <td>campaign_id</td>
+  </tr>
   <% @line_items.each do |li| %>
-    <li>
-      <%= li.name %>
-      <%= li.booked_amount %>
-      <%= li.actual_amount %>
-      <%= li.adjustments %>
-      <%= li.campaign_id %>
-    </li>
+    <tr>
+      <td><%= li.name %></td>
+      <td><%= li.booked_amount %></td>
+      <td><%= li.actual_amount %></td>
+      <td>
+          <%= form_for li do |f| %>
+            <%= f.number_field :adjustments %>
+            <%= f.submit "Update" %>
+          <% end %>
+      </td>
+      <td><%= li.campaign_id %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
 <%= paginate @line_items %>
