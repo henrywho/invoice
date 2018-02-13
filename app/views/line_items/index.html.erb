@@ -9,7 +9,7 @@
   </tr>
   <% @line_items.each do |li| %>
     <tr>
-      <td><%= li.name %></td>
+      <td><%= link_to(li.name, line_item_path(li)) %></td>
       <td><%= li.booked_amount %></td>
       <td><%= li.actual_amount %></td>
       <td>

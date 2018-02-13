@@ -10,6 +10,10 @@ class LineItemsController < ApplicationController
     redirect_back(fallback_location: line_items_path)
   end
 
+  def show
+    @line_item = LineItem.find(params[:id])
+  end
+
   def line_item_params
     params.require(:line_item).permit(:adjustments)
   end
