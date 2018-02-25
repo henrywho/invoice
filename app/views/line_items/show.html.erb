@@ -27,7 +27,7 @@
 <% else %>
   <ul>
     <% @line_item.versions.drop(1).reverse.each do |version| %>
-      <li><%= prettify_changeset(version.changeset) %></li>
+      <li><%= prettify_changeset(version) %></li>
     <% end %>
   </ul>
 <% end %>
