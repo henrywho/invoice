@@ -1,4 +1,6 @@
 class LineItemsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @line_items = LineItem.page params[:page]
   end
