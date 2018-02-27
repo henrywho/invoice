@@ -5,6 +5,7 @@ Features:
 - editable adjustments field
 - changelog of line item
 - can update from either line_items#index or line_items#show
+- user authentication via devise
 
 To get app running:
 ```
